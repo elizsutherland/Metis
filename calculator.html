@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <script>
+      function calculate(){
+        var first = Number(document.getElementById("left").value);
+        var second = Number(document.getElementById("right").value);
+        var operator =document.getElementById("operator").value;
+        var resultElement = document.getElementById("result");
+
+        if( operator ==="+"){
+        var result = first + second;
+        }else if (operator ==="-"){
+        var result = first - second;
+        }else if (operator ==="*"){
+        var result = first * second;
+        }else if (operator ==="/"){
+        var result = first / second;
+        } else {
+          var result = "Hey, you can't do that!"
+        }
+        resultElement.innerText = result
+        return false;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Calculator</h1>
+    <p id="result">No Calculation yet </>
+    <form onsubmit="return calculate();">
+      <input type="number" id="left"/>
+      <input type="text" id="operator" />
+      <input type="number" id="right"/>
+      <input type="submit" />
+    </form>
+  </body>
+<html>
